@@ -2,7 +2,7 @@ require_relative 'lib/redis_storage_tokens/version'
 
 Gem::Specification.new do |spec|
 
-  spec.add_dependency 'redis'
+  spec.add_dependency 'redis', '~>4.1.4'
   spec.add_runtime_dependency 'redis-namespace', '~> 1.5'
 
   spec.name          = "redis_storage_tokens"
