@@ -20,6 +20,8 @@ Or install it yourself as:
 
     $ gem install redis_storage_tokens
 
+## Usage
+
 Use RedisStorageTokens
 
     redis = RedisStorageTokens::Storage.new('redis://localhost:6379/1',:jwt)
@@ -27,10 +29,6 @@ Use RedisStorageTokens
     redis.set_token("key","value")
     result = redis.get_token("key")
     redis.del_token("key")
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
