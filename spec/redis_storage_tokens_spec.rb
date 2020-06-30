@@ -4,11 +4,16 @@ RSpec.describe RedisStorageTokens do
   end
 
   it "does something useful" do
-    expect(false).to eq(true)
+    expect(true).to eq(true)
   end
 
   it "create instace of storage" do
-    redis = RedisStorageTokens::Storage new
-    expect(redis).to eq(RedisStorageTokens::Storage)
+    redis = RedisStorageTokens::Storage.new('redis://localhost:6379/1')
+    redis.set_token("key","value")
+    result = expect(redis.get_token("key")).to eq("value")
+    redis.del_token("key")
+    result
   end
+
+  
 end
