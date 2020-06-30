@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    redis_storage_tokens (1.0.0)
-      redis
+    redis_storage_tokens (1.1.0)
+      redis (~> 4.1.4)
       redis-namespace (~> 1.5)
 
 GEM
@@ -10,7 +10,7 @@ GEM
   specs:
     diff-lcs (1.4.3)
     rake (12.3.3)
-    redis (4.2.1)
+    redis (4.1.4)
     redis-namespace (1.7.0)
       redis (>= 3.0.4)
     rspec (3.9.0)
