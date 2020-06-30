@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    redis_storage_tokens (0.1.0)
+    redis_storage_tokens (1.0.0)
       redis
       redis-namespace (~> 1.5)
 
