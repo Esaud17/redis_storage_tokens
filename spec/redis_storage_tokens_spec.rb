@@ -9,9 +9,9 @@ RSpec.describe RedisStorageTokens do
 
   it "create instace of storage" do
     redis = RedisStorageTokens::Storage.new('redis://localhost:6379/1')
-    redis.set_token("key","value")
-    result = expect(redis.get_token("key")).to eq("value")
-    redis.del_token("key")
+    redis.add("key","value")
+    result = expect(redis.find("key")).to eq("value")
+    redis.delete("key")
     result
   end
 

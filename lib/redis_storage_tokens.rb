@@ -1,4 +1,4 @@
-require "redis_storages/version"
+require "redis_storage_tokens/version"
 require "redis"
 require "redis-namespace"
 
