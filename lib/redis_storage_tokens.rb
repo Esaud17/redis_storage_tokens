@@ -1,4 +1,4 @@
-require "redis_storage_tokens/version"
+require "redis_storages/version"
 require "redis"
 require "redis-namespace"
 
@@ -16,15 +16,15 @@ module RedisStorageTokens
 
     public 
 
-      def set_token( key, value )
+      def add( key, value )
         @db.set(key,value)
       end
 
-      def get_token( key )
+      def find( key )
         @db.get(key)
       end
 
-      def del_token( key )
+      def delete( key )
         @db.del(key)
       end
 

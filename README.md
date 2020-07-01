@@ -24,9 +24,9 @@ Use RedisStorageTokens
 
     redis = RedisStorageTokens::Storage.new('redis://localhost:6379/1',:jwt)
 
-    redis.set_token("key","value")
-    result = redis.get_token("key")
-    redis.del_token("key")
+    redis.add("key","value")
+    result = redis.find("key")
+    redis.remove("key")
 
 ## Usage
 
