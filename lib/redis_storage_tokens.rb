@@ -6,9 +6,15 @@ module RedisStorageTokens
   class Storage
 
     def initialize(redis_uri, namespace = :jwt)
-      connection = Redis.new(url: redis_uri)
-      namespace  = Redis::Namespace.new(namespace, redis: connection) 
-      @db = namespace
+      begin 
+        connection = Redis.new(url: redis_uri)
+        connection.ping
+        namespace  = Redis::Namespace.new(namespace, redis: connection) 
+        @db = namespace
+      rescue Errno::ECONNREFUSED => e
+        puts "Error: Redis server unavailable. Shutting down..."
+        exit 1
+      end
     end 
 
     attr_accessor :db
